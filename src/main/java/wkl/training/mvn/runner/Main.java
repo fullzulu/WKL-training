@@ -13,7 +13,7 @@ public class Main
     public static void main( String[] args )
     {
     	Logger log = LogManager.getLogger(Main.class);
-    	log.info("THIS IS MY LOG MESSAGE");
+    	log.info("THIS IS MY NEW LOG MESSAGE!!!");
         System.out.println( "Hello World!" );
     }
 }

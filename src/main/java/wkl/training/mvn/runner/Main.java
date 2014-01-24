@@ -7,7 +7,7 @@ import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 
 import wkl.training.enrichment.file.service.IEnrichmentService;
-import wkl.training.enrichment.file.service.impl.DirectEnrichmentService;
+import wkl.training.enrichment.file.service.impl.RevertEnrichmentService;
 
 /**
  * 
@@ -22,7 +22,7 @@ public class Main {
 			File fromFile = getFile(args[1]);
 			
 			try {
-				IEnrichmentService service = new DirectEnrichmentService();
+				IEnrichmentService service = new RevertEnrichmentService();
 				service.appendFileToFile(toFile, fromFile);
 				log.info("DONE");
 			} catch (IOException e) {

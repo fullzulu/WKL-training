@@ -18,8 +18,6 @@ public class RevertEnrichmentService implements IEnrichmentService {
 
 		fromContent.reverse();
 		
-		System.out.println(fromContent);
-		
 		FileUtils.appendToFile(toFile, fromContent.toString());
 	}
 

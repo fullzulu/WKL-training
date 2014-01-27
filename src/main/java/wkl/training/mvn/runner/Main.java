@@ -17,20 +17,22 @@ import wkl.training.enrichment.file.service.impl.DirectEnrichmentService;
 public class Main {
 	static Logger log = LogManager.getLogger(Main.class);
 	public static void main(String[] args) {
-		if (args.length == 2) {
+		
+		if (args.length == 3) {
 			File toFile = getFile(args[0]);
 			File fromFile = getFile(args[1]);
+			String regexp = args[2];
 			
 			try {
 				IEnrichmentService service = new DirectEnrichmentService();
-				service.appendFileToFile(toFile, fromFile);
+				service.appendFileToFile(toFile, fromFile, regexp);
 				log.info("DONE");
 			} catch (IOException e) {
 				log.error("Error occured while appendig file content from file "
 						+ fromFile.getName() + " to file " + toFile.getName() + ":\n" + e.getMessage(), e);
 			}
 		} else {
-			log.error("You need to provide two file paths as arguments");
+			log.error("You need to provide two file paths and regexp as arguments");
 		}
 	}
 	

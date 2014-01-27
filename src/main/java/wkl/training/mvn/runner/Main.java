@@ -15,6 +15,7 @@ import wkl.training.enrichment.file.service.impl.RevertEnrichmentService;
  * 
  */
 public class Main {
+	
 	public static void main(String[] args) {
 		Logger log = LogManager.getLogger(Main.class);
 		if (args.length == 2) {
@@ -37,10 +38,7 @@ public class Main {
 	private static File getFile(String path){
 		File file = new File(path);
 		if(!file.exists()){
-			ClassLoader loader = Main.class.getClassLoader();
-			if(loader.getResource(path) != null){
-				file = new File(loader.getResource(path).getFile());
-			}
+			file = new File(System.getProperty("user.dir") + File.separator + path);
 		}
 		
 		return file;

@@ -9,5 +9,5 @@ import java.io.IOException;
  *
  */
 public interface IEnrichmentService {
-	void appendFileToFile(File toFile, File fromFile) throws IOException;
+	void appendFileToFile(File toFile, File fromFile, String regexp) throws IOException;
 }

@@ -13,10 +13,10 @@ import wkl.training.enrichment.util.FileUtils;
  */
 public class DirectEnrichmentService implements IEnrichmentService {
 
-	public void appendFileToFile(File toFile, File fromFile) throws IOException {
+	public void appendFileToFile(File toFile, File fromFile, String regexp) throws IOException {
 		StringBuilder fromContent = FileUtils.concatLines(fromFile);
 
-		FileUtils.appendToFile(toFile, fromContent.toString());
+		FileUtils.appendToFile(toFile, fromContent.toString(), regexp);
 	}
 
 }

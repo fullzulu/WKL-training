@@ -13,12 +13,12 @@ import wkl.training.enrichment.util.FileUtils;
  */
 public class RevertEnrichmentService implements IEnrichmentService {
 
-	public void appendFileToFile(File toFile, File fromFile) throws IOException {
+	public void appendFileToFile(File toFile, File fromFile, String regexp) throws IOException {
 		StringBuilder fromContent = FileUtils.concatLines(fromFile);
 
 		fromContent.reverse();
 		
-		FileUtils.appendToFile(toFile, fromContent.toString());
+		FileUtils.appendToFile(toFile, fromContent.toString(), regexp);
 	}
 
 }

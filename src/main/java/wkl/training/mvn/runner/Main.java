@@ -16,7 +16,7 @@ import wkl.training.enrichment.file.service.impl.DirectEnrichmentService;
  */
 public class Main {
 	static Logger log = LogManager.getLogger(Main.class);
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 		
 		if (args.length == 3) {
 			File toFile = getFile(args[0]);
@@ -30,6 +30,7 @@ public class Main {
 			} catch (IOException e) {
 				log.error("Error occured while appendig file content from file "
 						+ fromFile.getName() + " to file " + toFile.getName() + ":\n" + e.getMessage(), e);
+				throw new IOException(e);
 			}
 		} else {
 			log.error("You need to provide two file paths and regexp as arguments");

@@ -1,2 +1,5 @@
-'from' file text.
-blabla
+'from' file text. user1@mail.ru
+blabla user2@gmail.com
+qwwewee
+user3@yandex
+user4@asdasd.info

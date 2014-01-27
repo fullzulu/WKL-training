@@ -37,6 +37,7 @@ public class Main {
 	private static File getFile(String path){
 		File file = new File(path);
 		log.info(path);
+		log.info(System.getProperty("user.dir"));
 		if(!file.exists()){
 			file = new File(System.getProperty("user.dir") + File.separator + path);
 		}
